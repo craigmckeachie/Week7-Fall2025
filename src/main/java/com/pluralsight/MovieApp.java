@@ -23,6 +23,18 @@ public class MovieApp {
             }
         }
 
+        System.out.println();
+        //filtering with streams
+        System.out.println("Movies rated 8.0 or higher:");
+        movies.stream()
+                .filter(m -> m.getRating() >= 8.0)
+                .forEach(System.out::println);
+
+        System.out.println("\nAction movies released after 2022:");
+        movies.stream()
+                .filter(m -> m.getGenre().equals("Action") && m.getReleaseYear() > 2022)
+                .forEach(System.out::println);
+
 
     }
 
