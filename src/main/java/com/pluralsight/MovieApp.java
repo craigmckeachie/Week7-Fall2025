@@ -9,6 +9,17 @@ public class MovieApp {
     public static void main(String[] args) {
         List<Movie> movies = getMovies();
 
+        System.out.println("For each loop");
+        for (Movie movie: movies) {
+            System.out.println(movie);
+        }
+
+        System.out.println();
+        System.out.println("For each method on stream");
+        movies.stream().forEach(movie-> System.out.println(movie));
+
+
+
         //filtering without streams
         System.out.println("Movies rated 8.0 or higher:");
         for (Movie movie : movies) {
@@ -34,10 +45,20 @@ public class MovieApp {
 //            }
 //        }
         movies.stream()
-                .filter((movie) -> movie.getRating() >= 8)
-                .forEach(movie-> System.out.println(movie));
+                .filter(movie -> movie.getRating() >= 8)
+                .forEach(movie -> System.out.println(movie));
 
 
+        List<Movie> highlyRatedMovies = getHighlyRatedMovies(movies);
+        highlyRatedMovies.forEach(movie-> System.out.println(movie));
+
+
+    }
+
+    private static List<Movie> getHighlyRatedMovies(List<Movie> movies) {
+        return movies.stream()
+                .filter(movie -> movie.getRating() >= 8)
+                .toList();
     }
 
     public static List<Movie> getMovies() {
