@@ -15,3 +15,6 @@
 
 - [Java package organization](https://chatgpt.com/share/690cd1b0-0154-8000-92bd-d2b2b04793fc)
 - [Google Search: example project organized using Packages](https://github.com/craigmckeachie/google-search)
+
+# Sorting
+- [Comparable vs Comparator](https://chatgpt.com/share/690d0075-50f4-8000-97c3-832cf500b602)
